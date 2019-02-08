@@ -1,7 +1,7 @@
 install: install-deps install-flow-typed
 
 run:
-	npx babel-node -- 'src/bin/hexlet.js' 10
+	npx babel-node -- 'src/bin/getGeo.js'
 
 install-deps:
 	npm install
