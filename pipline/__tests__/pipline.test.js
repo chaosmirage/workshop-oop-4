@@ -20,7 +20,8 @@ test('Get prepared file names', () => {
     .sort()
     .middle()
     .plural()
-    .upcase();
+    .upcase()
+    .toString();
 
   expect(file).toBe(RESULT);
 });

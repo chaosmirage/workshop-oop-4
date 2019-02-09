@@ -45,6 +45,10 @@ export default class Pipline {
   upcase() {
     const str = this.files[0];
     const preparedStr = str.toUpperCase();
-    return preparedStr;
+    return new Pipline({ files: [preparedStr] });
+  }
+
+  toString() {
+    return this.files[0];
   }
 }
