@@ -25,7 +25,7 @@ export default class GeoService {
         this.info = res;
       })
       .catch(e => {
-        this.info = e;
+        return e;
       });
   }
 
