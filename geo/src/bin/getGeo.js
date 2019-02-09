@@ -6,11 +6,11 @@ program
   .version('0.1.0')
   .arguments('[ip]')
   .action(async (input) => {
-    const geoService = getGeo({ ip: input });
+    const geoService = getGeo();
 
     try {
-      await geoService.loadData();
-      console.log(geoService.getInfo());
+      const data = await geoService.loadData(input);
+      console.log(data);
     } catch (e) {
       console.log(e);
     }

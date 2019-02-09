@@ -1,41 +1,31 @@
 import axios from 'axios';
 
-const makeRequest = (url) => {
+const makeRequest = (host, ip) => {
+  const url = `${host}/${ip}`;
   return axios.get(url)
     .then(({ data }) => {
       return data;
     })
     .catch((e) => {
       return e;
-    })
-}
+    });
+};
 
 export default class GeoService {
   constructor(config) {
-    const preparedIp = config.ip || '';
-    const preparedUrl = config.host || 'http://ip-api.com/json';
-    this.url = `${preparedUrl}/${preparedIp}`;
+    this.host = 'http://ip-api.com/json';
     this.loader = config.loader || makeRequest;
   }
 
-  loadData(customUrl) {
-    const { url, loader } = this;
-    const preparedUrl = customUrl || url;
+  loadData(ip = '') {
+    const { host, loader } = this;
 
-    return loader(preparedUrl)
-      .then(res => {
-        this.info = res;
+    return loader(host, ip)
+      .then((res) => {
+        return res;
       })
-      .catch(e => {
+      .catch((e) => {
         return e;
       });
-  }
-
-  getUrl() {
-    return this.url;
-  }
-
-  getInfo() {
-    return this.info;
   }
 }

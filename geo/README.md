@@ -25,11 +25,11 @@ loader,
 ```
 import getGeo from 'get-geo';
 
-const geoService = getGeo({ ip: '127.0.0.1' });
+const geoService = getGeo();
 
 try {
-  await geoService.loadData();
-  console.log(geoService.getInfo());
+  const data = await geoService.loadData(input);
+  console.log(data);
 } catch (e) {
   console.log(e);
 }
