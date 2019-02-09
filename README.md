@@ -20,13 +20,7 @@ get-geo [external ip]
 import getGeo from 'get-geo';
 
 const ip = getGeo();
-ip.getInfo(87.240.190.67)
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+const info = await ip.getInfo(87.240.190.67);
 ```
 
 ## Setup
