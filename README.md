@@ -19,8 +19,8 @@ get-geo [external ip]
 ```
 import getGeo from 'get-geo';
 
-const ip = getGeo();
-const info = await ip.getInfo(87.240.190.67);
+const ip = getGeo(87.240.190.67);
+const info = await ip.getInfo();
 ```
 
 ## Setup
