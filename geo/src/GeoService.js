@@ -18,9 +18,11 @@ export default class GeoService {
     this.loader = config.loader || makeRequest;
   }
 
-  loadData() {
+  loadData(customUrl) {
     const { url, loader } = this;
-    return loader(url)
+    const preparedUrl = customUrl || url;
+
+    return loader(preparedUrl)
       .then(res => {
         this.info = res;
       })
