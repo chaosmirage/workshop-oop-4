@@ -5,15 +5,14 @@ import getGeo from '..';
 program
   .version('0.1.0')
   .arguments('[ip]')
-  .action((input) => {
+  .action(async (input) => {
     const ip = getGeo(input);
 
-    ip.getInfo()
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    try {
+      const info = await ip.getInfo();
+      console.log(info);
+    } catch (e) {
+      console.log(e);
+    }
   })
   .parse(process.argv);
