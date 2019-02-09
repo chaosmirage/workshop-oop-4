@@ -1,5 +1,7 @@
 ## How to use?
 
+### CLI
+
 Get your ip info
 
 ```sh
@@ -12,11 +14,13 @@ Get external ip info
 get-geo [external ip]
 ```
 
+### Lib
+
 ```
 import getGeo from 'get-geo';
 
 const ip = getGeo();
-ip.getInfo()
+ip.getInfo(87.240.190.67)
   .then((res) => {
     console.log(res);
   })
