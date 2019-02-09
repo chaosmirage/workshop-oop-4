@@ -1,6 +1,5 @@
-import buildIP from './buildIP';
+import GeoService from './GeoService';
 
-export default (query) => {
-  const ip = buildIP(query);
-  return ip;
+export default (options = {}) => {
+  return new GeoService(options);
 };

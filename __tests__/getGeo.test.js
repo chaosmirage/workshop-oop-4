@@ -1,34 +1,19 @@
-import * as axios from 'axios';
-import MY_IP_DATA_MOCK from './mock/myIP';
-import EXTERNAL_IP_DATA_MOCK from './mock/externalIP';
-import ExternalIP from '../src/ExternalIP';
-import MyIP from '../src/MyIP';
-import buildIP from '../src/buildIP';
+import IP_DATA_MOCK from './mock/ipData';
+import getGeo from '../src/getGeo';
 
-jest.mock('axios');
-
-test('Get info', () => {
-  axios.get.mockImplementation(() => Promise.resolve({ data: MY_IP_DATA_MOCK }));
-
-  const ip = buildIP();
-
-  return ip.getInfo()
-    .then((res) => {
-      expect(res).toBe(MY_IP_DATA_MOCK);
-    });
+test('Pass custom host and ip', async () => {
+  const ip = '127.0.0.1';
+  const host = 'test';
+  const geoService = getGeo({ ip, host });
+  expect(geoService.getUrl()).toBe(`${host}/${ip}`);
 });
 
-test('Get MyIP instance', () => {
-  const ip = buildIP();
-  expect(ip).toBeInstanceOf(MyIP);
-});
+test('Load data', async () => {
+  const makeRequest = () => {
+    return Promise.resolve(IP_DATA_MOCK);
+  };
 
-test('Get ExternalIP instance', () => {
-  const ip = buildIP(EXTERNAL_IP_DATA_MOCK.query);
-  expect(ip).toBeInstanceOf(ExternalIP);
-});
-
-test('ExternalIP instance have query', () => {
-  const ip = buildIP(EXTERNAL_IP_DATA_MOCK.query);
-  expect(ip.query).toBe(EXTERNAL_IP_DATA_MOCK.query);
+  const geoService = getGeo({ loader: makeRequest });
+  await geoService.loadData();
+  expect(geoService.getInfo()).toBe(IP_DATA_MOCK);
 });
