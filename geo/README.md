@@ -15,12 +15,11 @@ get-geo [external ip]
 ```
 
 ### Lib
-
-Options:
+getGeo options:
 ```
-  ip,
-  host,
-  loader,
+ip,
+host,
+loader,
 ```
 
 ```
