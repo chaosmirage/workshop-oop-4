@@ -16,6 +16,13 @@ get-geo [external ip]
 
 ### Lib
 
+Options:
+```
+  ip,
+  host,
+  loader,
+```
+
 ```
 import getGeo from 'get-geo';
 
