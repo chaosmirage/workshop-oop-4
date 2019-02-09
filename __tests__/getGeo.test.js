@@ -1,8 +1,6 @@
 import * as axios from 'axios';
-import {
-  MY_IP_DATA_MOCK,
-  EXTERNAL_IP_DATA_MOCK,
-} from '../src/data.mock';
+import MY_IP_DATA_MOCK from './mock/myIP';
+import EXTERNAL_IP_DATA_MOCK from './mock/externalIP';
 import ExternalIP from '../src/ExternalIP';
 import MyIP from '../src/MyIP';
 import buildIP from '../src/buildIP';
