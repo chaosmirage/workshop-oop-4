@@ -1,5 +1,11 @@
 #!/usr/bin/env node
-
+import program from 'commander';
 import getGeo from '..';
 
-console.log(getGeo(Number(process.argv[process.argv.length - 1])));
+program
+  .version('0.1.0')
+  .arguments('[ip]')
+  .action((ip) => {
+    getGeo(ip);
+  })
+  .parse(process.argv);

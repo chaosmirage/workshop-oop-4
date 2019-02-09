@@ -1,4 +1,6 @@
-export default (num) => {
-  const result = num / 2;
-  return result;
+import buildIP from './buildIP';
+
+export default (query) => {
+  const ip = buildIP(query);
+  return ip.getInfo();
 };

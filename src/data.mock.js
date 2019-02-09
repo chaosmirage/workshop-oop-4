@@ -1,0 +1,33 @@
+export const MY_IP_DATA_MOCK = {
+  as: 'AS41668 JSC "ER-Telecom Holding"',
+  city: 'Kazan’',
+  country: 'Russia',
+  countryCode: 'RU',
+  isp: 'CJSC "ER-Telecom Holding" Kazan\' branch',
+  lat: 55.75,
+  lon: 49.1333,
+  org: 'CJSC "ER-Telecom Holding" Kazan Branch',
+  query: '188.234.48.47',
+  region: 'TA',
+  regionName: 'Tatarstan Republic',
+  status: 'success',
+  timezone: 'Europe/Moscow',
+  zip: '420073',
+};
+
+export const EXTERNAL_IP_DATA_MOCK = {
+  as: 'AS47541 VKontakte Ltd',
+  city: 'St Petersburg',
+  country: 'Russia',
+  countryCode: 'RU',
+  isp: 'VKONTAKTE SPb Net',
+  lat: 59.9283,
+  lon: 30.3748,
+  org: 'Vkontakte Ltd',
+  query: '87.240.190.67',
+  region: 'SPE',
+  regionName: 'St.-Petersburg',
+  status: 'success',
+  timezone: 'Europe/Moscow',
+  zip: '',
+};
