@@ -8,7 +8,7 @@ test('Set init host and ip', async () => {
   expect(geoService.getUrl()).toBe(`${host}/${ip}`);
 });
 
-test('Pass custom url to loadData', async () => {
+test('Set custom url to loadData method', async () => {
   const CUSTOM_URL = 'customUrl';
   const CUSTOM_URL_RESPONSE = 'customUrlResponse';
 
