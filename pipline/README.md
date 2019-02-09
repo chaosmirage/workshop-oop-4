@@ -17,7 +17,8 @@ try {
     .sort()
     .middle()
     .plural()
-    .upcase();
+    .upcase()
+    .toString();
 
   console.log(file);
 } catch (e) {
