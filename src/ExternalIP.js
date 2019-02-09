@@ -1,7 +1,12 @@
 import BaseIP from './BaseIP';
 
 export default class ExternalIP extends BaseIP {
-  getInfo(ip) {
-    return this.makeRequest(ip);
+  constructor(ip) {
+    super(ip);
+    this.ip = ip;
+  }
+
+  getInfo() {
+    return this.makeRequest(this.ip);
   }
 }

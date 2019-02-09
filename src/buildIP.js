@@ -6,5 +6,5 @@ export default (ip) => {
     return new ExternalIP(ip);
   }
 
-  return new MyIP(ip);
+  return new MyIP();
 };
