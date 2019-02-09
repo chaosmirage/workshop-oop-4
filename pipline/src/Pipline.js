@@ -7,12 +7,12 @@ const defaultReader = () => {
 export default class Pipline {
   constructor(options) {
     this.reader = options.reader || defaultReader;
+    this.files = options.files || [];
   }
 
   readFiles() {
     const files = this.reader();
-    this.files = files;
-    return this;
+    return new Pipline({ files });
   }
 
   filter() {
@@ -21,29 +21,25 @@ export default class Pipline {
       return firstChar !== '.';
     });
 
-    this.files = filtered;
-    return this;
+    return new Pipline({ files: filtered });
   }
 
   sort() {
     const sorted = this.files.sort();
-    this.files = sorted;
-    return this;
+    return new Pipline({ files: sorted });
   }
 
   middle() {
     const middleIndex = Math.round(this.files.length / 2);
     const arrayWithMiddleItem = [this.files[middleIndex]];
-    this.files = arrayWithMiddleItem;
-    return this;
+    return new Pipline({ files: arrayWithMiddleItem });
   }
 
   plural() {
     const str = this.files[0];
 
     const preparedStr = str.endsWith('s') ? str : `${str}s`;
-    this.files = [preparedStr];
-    return this;
+    return new Pipline({ files: [preparedStr] });
   }
 
   upcase() {
