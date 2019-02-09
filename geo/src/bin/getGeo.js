@@ -9,7 +9,7 @@ program
     const geoService = getGeo();
 
     try {
-      const data = await geoService.loadData(input);
+      const { data } = await geoService.loadData(input);
       console.log(data);
     } catch (e) {
       console.log(e);
