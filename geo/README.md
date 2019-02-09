@@ -17,8 +17,6 @@ get-geo [external ip]
 ### Lib
 getGeo options:
 ```
-ip,
-host,
 loader,
 ```
 
