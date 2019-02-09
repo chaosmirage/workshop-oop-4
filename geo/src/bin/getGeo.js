@@ -13,6 +13,7 @@ program
       console.log(data);
     } catch (e) {
       console.log(e);
+      process.exit(1);
     }
   })
   .parse(process.argv);

@@ -1,14 +1,9 @@
 import axios from 'axios';
 
-const makeRequest = (host, ip) => {
+const makeRequest = async (host, ip) => {
   const url = `${host}/${ip}`;
-  return axios.get(url)
-    .then(({ data }) => {
-      return data;
-    })
-    .catch((e) => {
-      return e;
-    });
+  const data = axios.get(url);
+  return data;
 };
 
 export default class GeoService {
@@ -17,15 +12,10 @@ export default class GeoService {
     this.loader = config.loader || makeRequest;
   }
 
-  loadData(ip = '') {
+  async loadData(ip = '') {
     const { host, loader } = this;
 
-    return loader(host, ip)
-      .then((res) => {
-        return res;
-      })
-      .catch((e) => {
-        return e;
-      });
+    const data = await loader(host, ip);
+    return data;
   }
 }
