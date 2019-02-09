@@ -5,7 +5,6 @@ export default (query) => {
 
   return ip.getInfo()
     .then((res) => {
-      console.log(res);
       return res;
     });
 };

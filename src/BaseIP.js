@@ -9,7 +9,7 @@ export default class BaseIp {
         return data;
       })
       .catch((e) => {
-        console.log(e);
+        return e;
       })
   }
 }
