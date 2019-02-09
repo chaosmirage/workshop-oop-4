@@ -5,8 +5,10 @@ import getGeo from '..';
 program
   .version('0.1.0')
   .arguments('[ip]')
-  .action((ip) => {
-    getGeo(ip)
+  .action((input) => {
+    const ip = getGeo(input);
+
+    ip.getInfo()
       .then((res) => {
         console.log(res);
       })

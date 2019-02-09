@@ -12,6 +12,19 @@ Get external ip info
 get-geo [external ip]
 ```
 
+```
+import getGeo from 'get-geo';
+
+const ip = getGeo();
+ip.getInfo()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+```
+
 ## Setup
 
 ```sh
