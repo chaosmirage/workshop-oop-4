@@ -1,7 +1,7 @@
 import Node from './Node';
 
-export default class PairTag extends Node {
-  constructor(name, attributes, content) {
+export default class SingleTag extends Node {
+  constructor(name) {
     super(name);
   }
 
