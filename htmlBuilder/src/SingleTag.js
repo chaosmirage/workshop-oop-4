@@ -6,9 +6,9 @@ export default class SingleTag extends Node {
   }
 
   toString() {
-    const { name, getAttributesString, attributes } = this;
+    const { name } = this;
 
-    const attributesString = getAttributesString(attributes);
+    const attributesString = this.getAttributesString();
 
     return `<${name}${attributesString}>`
   }

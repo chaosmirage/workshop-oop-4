@@ -7,8 +7,8 @@ export default class PairTag extends Node {
   }
 
   toString() {
-    const { name, content, getAttributesString, attributes } = this;
-    const attributesString = getAttributesString(attributes);
+    const { name, content } = this;
+    const attributesString = this.getAttributesString();
 
     return `<${name}${attributesString}>${content}</${name}>`
   }

@@ -4,7 +4,9 @@ export default class Node {
     this.attributes = attributes;
   }
 
-  getAttributesString(attributes) {
+  getAttributesString() {
+    const { attributes } = this;
+
     const string = Object.keys(attributes)
       .reduce((acc, key) => {
         return `${acc} ${key}="${attributes[key]}"`
