@@ -1,10 +1,9 @@
-import makeRequest from './makeRequest';
-
-export default class MetaWeather {
+import BaseService from './BaseService';
+export default class MetaWeather extends BaseService{
   constructor(config) {
+    super({ loader: config.loader });
     this.host = 'https://www.metaweather.com/api/location';
     this.serviceName = 'MetaWeather';
-    this.load = config.loader || makeRequest;
   }
 
   getServiceName() {

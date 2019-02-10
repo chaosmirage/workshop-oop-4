@@ -1,11 +1,10 @@
-import makeRequest from './makeRequest';
-
-export default class WeatherBit {
+import BaseService from './BaseService';
+export default class WeatherBit extends BaseService {
   constructor(config) {
+    super({ loader: config.loader });
     this.host = 'https://api.weatherbit.io/v2.0';
     this.apiKey = '3d2a467351dd4b3c804f184f9c695776';
     this.serviceName = 'WeatherBit';
-    this.load = config.loader || makeRequest;
   }
 
   getServiceName() {
