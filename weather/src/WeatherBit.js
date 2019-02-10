@@ -3,7 +3,7 @@ export default class WeatherBit extends BaseService {
   constructor(config) {
     super({ loader: config.loader });
     this.host = 'https://api.weatherbit.io/v2.0';
-    this.apiKey = '3d2a467351dd4b3c804f184f9c695776';
+    this.apiKey = config.apiKey || '';
     this.serviceName = 'WeatherBit';
   }
 

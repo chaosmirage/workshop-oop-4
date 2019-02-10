@@ -10,8 +10,9 @@ weather moscow -s MetaWeather
 options:
 ```
 serviceName,
-customServices,
 loader,
+apiKey,
+customServices,
 ```
 
 ```sh

@@ -8,8 +8,12 @@ program
   .option('-s, --service <service>', 'choose one of weather service: MetaWeather, WeatherBit')
   .action(async (city) => {
     try {
-      const serviceName = program.service;
-      const weatherService = makeWeatherService({ serviceName });
+      const config = {
+        serviceName: program.service,
+        apiKey: '3d2a467351dd4b3c804f184f9c695776',
+      };
+
+      const weatherService = makeWeatherService(config);
       const data = await weatherService.getData(city);
       console.log(data);
     } catch (e) {
