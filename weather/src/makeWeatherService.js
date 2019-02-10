@@ -2,18 +2,19 @@ import MetaWeather from './MetaWeather';
 import WeatherBit from './WeatherBit';
 
 export default (options = {}) => {
-  const { serviceName, ...rest } = options;
+  const { serviceName, customServices, ...rest } = options;
 
   const map = {
-    MetaWeather: serviceOptions => new MetaWeather(serviceOptions),
-    WeatherBit: serviceOptions => new WeatherBit(serviceOptions),
+    MetaWeather,
+    WeatherBit,
+    ...customServices,
   };
 
-  const serviceMaker = map[serviceName];
+  const ServiceType = map[serviceName];
 
-  if (!serviceMaker) {
+  if (!ServiceType) {
     throw new Error('Service not provided');
   }
 
-  return serviceMaker(rest);
+  return new ServiceType(rest);
 };

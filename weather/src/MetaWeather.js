@@ -4,7 +4,7 @@ export default class MetaWeather {
   constructor(config) {
     this.host = 'https://www.metaweather.com/api/location';
     this.serviceName = 'MetaWeather';
-    this.loader = config.loader || makeRequest;
+    this.load = config.loader || makeRequest;
   }
 
   getServiceName() {
@@ -12,12 +12,12 @@ export default class MetaWeather {
   }
 
   async getData(city = '') {
-    const { host, loader } = this;
+    const { host, load } = this;
 
     const cityIdQuery = `search/?query=${city}`;
-    const { data: cityList } = await loader(host, cityIdQuery);
+    const { data: cityList } = await load(host, cityIdQuery);
     const cityId = cityList[0].woeid;
-    const { data } = await loader(host, cityId);
+    const { data } = await load(host, cityId);
     return data;
   }
 }

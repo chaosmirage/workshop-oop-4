@@ -7,6 +7,13 @@ weather moscow -s MetaWeather
 ```
 
 ### Lib
+options:
+```
+serviceName,
+customServices,
+loader,
+```
+
 ```sh
 import makeWeatherService from 'weather';
 

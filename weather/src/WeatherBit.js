@@ -5,7 +5,7 @@ export default class WeatherBit {
     this.host = 'https://api.weatherbit.io/v2.0';
     this.apiKey = '3d2a467351dd4b3c804f184f9c695776';
     this.serviceName = 'WeatherBit';
-    this.loader = config.loader || makeRequest;
+    this.load = config.loader || makeRequest;
   }
 
   getServiceName() {
@@ -13,9 +13,9 @@ export default class WeatherBit {
   }
 
   async getData(city = '') {
-    const { host, loader, apiKey } = this;
+    const { host, load, apiKey } = this;
     const query = `current?city=${city}&key=${apiKey}`;
-    const { data } = await loader(host, query);
+    const { data } = await load(host, query);
     return data;
   }
 }

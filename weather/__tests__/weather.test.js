@@ -13,7 +13,7 @@ test('MetaWeather work', async () => {
       }
 
       if (query === CITY_ID) {
-        return Promise.resolve({ data: MOSCOW_DATA_MOCK });
+        return { data: MOSCOW_DATA_MOCK };
       }
     },
     serviceName: META_WEATHER,
