@@ -1,30 +1,17 @@
 ## How to use?
+You can choose one of weather service: MetaWeather, WeatherBit
 
 ### CLI
 ```sh
-pipline
+weather moscow -s MetaWeather
 ```
 
 ### Lib
 ```sh
-import makePipline from 'pipline';
+import makeWeatherService from 'weather';
 
-const pipline = makePipline();
-
-try {
-  const file = pipline.readFiles()
-    .filter()
-    .sort()
-    .middle()
-    .plural()
-    .upcase()
-    .toString();
-
-  console.log(file);
-} catch (e) {
-  console.log(e);
-  process.exit(1);
-}
+const weatherService = makeWeatherService({ serviceName });
+const data = await weatherService.getData('moscow');
 ```
 
 ## Setup

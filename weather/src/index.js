@@ -1,4 +1,4 @@
 import 'source-map-support/register';
-import makeWeather from './makeWeather';
+import makeWeatherService from './makeWeatherService';
 
-export default makeWeather;
+export default makeWeatherService;

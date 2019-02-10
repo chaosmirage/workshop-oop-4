@@ -1,0 +1,14 @@
+{
+  "consolidated_weather": [],
+  "time": "2019-02-10T07:47:55.540316Z",
+  "sun_rise": "2019-02-10T07:24:19.235049Z",
+  "sun_set": "2019-02-10T17:05:51.151342Z",
+  "timezone_name": "LMT",
+  "parent": {},
+  "sources": [],
+  "title": "London",
+  "location_type": "City",
+  "woeid": 44418,
+  "latt_long": "51.506321,-0.12714",
+  "timezone": "Europe/London"
+}
