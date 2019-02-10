@@ -26,8 +26,6 @@ test('SingleTag created', async () => {
 });
 
 test('SingleTag isShort work', async () => {
-  const RESULT = '<hr class="test">';
-
   const node = {
     name: 'hr',
   };
@@ -35,4 +33,3 @@ test('SingleTag isShort work', async () => {
   const html = htmlBuilder(node);
   expect(html.isShort()).toBe(true);
 });
-
