@@ -1,25 +1,23 @@
 ## How to use?
-You can choose one of weather service: MetaWeather, WeatherBit
-
-### CLI
-```sh
-weather moscow -s MetaWeather
-```
-
-### Lib
-options:
-```
-serviceName,
-loader,
-apiKey,
-customServices,
-```
 
 ```sh
-import makeWeatherService from 'weather';
+import buildHtml from 'buildHtml';
 
-const weatherService = makeWeatherService({ serviceName });
-const data = await weatherService.getData('moscow');
+const PairTag = {
+  name: 'div',
+  attributes: { class: 'row' },
+  content: 'content',
+};
+
+const html = htmlBuilder(PairTag);
+html.toString() -> <div class="row">content</div>
+
+const SingleTag = {
+  name: 'hr',
+};
+
+const html = htmlBuilder(SingleTag);
+html.toString() -> <hr>
 ```
 
 ## Setup
