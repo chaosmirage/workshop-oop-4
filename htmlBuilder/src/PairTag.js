@@ -1,10 +1,10 @@
 import Node from './Node';
 
 export default class PairTag extends Node {
-  constructor(name, attributes, content) {
+  constructor(name, attributes = {}, content = '') {
     super(name);
-    this.attributes = attributes || {};
-    this.content = content || '';
+    this.attributes = attributes;
+    this.content = content;
   }
 
   toString() {

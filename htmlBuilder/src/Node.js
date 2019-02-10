@@ -1,5 +1,5 @@
 export default class Node {
-  constructor(name) {
+  constructor(name = '') {
     this.name = name;
   }
 }
