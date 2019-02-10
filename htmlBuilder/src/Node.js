@@ -14,4 +14,9 @@ export default class Node {
 
     return string;
   }
+
+  isShort() {
+    const string = this.toString();
+    return string.length < 10;
+  }
 }

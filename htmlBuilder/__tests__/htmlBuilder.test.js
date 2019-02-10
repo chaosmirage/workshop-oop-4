@@ -24,3 +24,15 @@ test('SingleTag created', async () => {
   const html = htmlBuilder(node);
   expect(html.toString()).toBe(RESULT);
 });
+
+test('SingleTag isShort work', async () => {
+  const RESULT = '<hr class="test">';
+
+  const node = {
+    name: 'hr',
+  };
+
+  const html = htmlBuilder(node);
+  expect(html.isShort()).toBe(true);
+});
+
