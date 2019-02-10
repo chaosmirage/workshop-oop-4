@@ -1,12 +1,15 @@
 import Node from './Node';
 
 export default class SingleTag extends Node {
-  constructor(name) {
-    super(name);
+  constructor(name, attributes) {
+    super(name, attributes);
   }
 
   toString() {
-    const { name } = this;
-    return `<${name}>`
+    const { name, getAttributesString, attributes } = this;
+
+    const attributesString = getAttributesString(attributes);
+
+    return `<${name}${attributesString}>`
   }
 }

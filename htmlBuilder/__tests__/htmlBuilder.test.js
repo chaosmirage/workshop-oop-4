@@ -14,10 +14,11 @@ test('PairTag created', async () => {
 });
 
 test('SingleTag created', async () => {
-  const RESULT = '<hr>';
+  const RESULT = '<hr class="test">';
 
   const node = {
     name: 'hr',
+    attributes: { class: 'test' },
   };
 
   const html = htmlBuilder(node);

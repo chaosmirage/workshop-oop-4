@@ -2,20 +2,14 @@ import Node from './Node';
 
 export default class PairTag extends Node {
   constructor(name, attributes = {}, content = '') {
-    super(name);
-    this.attributes = attributes;
+    super(name, attributes);
     this.content = content;
   }
 
   toString() {
-    const { name, attributes, content } = this;
+    const { name, content, getAttributesString, attributes } = this;
+    const attributesString = getAttributesString(attributes);
 
-    const preparedAttributes = Object.keys(attributes)
-      .reduce((acc, key) => {
-        return `${acc} ${key}="${attributes[key]}"`
-      }, '');
-
-    return `<${name}${preparedAttributes}>${content}</${name}>`
-
+    return `<${name}${attributesString}>${content}</${name}>`
   }
 }
